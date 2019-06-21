@@ -96,9 +96,9 @@ for j in range(epochs):
                     batch_size = 1,
                     validation_data = (test_data1[57], test_labels1[57]),
                     verbose = 1)
-    model.save('../models/21-06-2xblstm_batch1_96.h5')
+    model.save('../models/blstm_batch1.h5')
 
-model.save('../models/21-06-2xblstm_batch1_96.h5')
+model.save('../models/blstm_batch1.h5')
 
 all_accuracy = 0
 all_loss = 0
