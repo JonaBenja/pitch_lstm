@@ -69,6 +69,11 @@ model = Sequential([
         recurrent_activation = 'sigmoid'),
         batch_input_shape = (1, None, 28)),
 
+    Bidirectional(LSTM(96,
+        return_sequences = True,
+        stateful = True,
+        recurrent_activation = 'sigmoid')),
+
     Dense(15, activation = tf.keras.activations.softmax),
 
     ])
@@ -79,15 +84,28 @@ model.compile(  loss = 'categorical_crossentropy',
 
 model.summary()
 
-epochs = 100
+epochs = 115
 
 for j in range(epochs):
     for i in range(len(train_data1)):
         print(j+1, "/", epochs)
         print(i+1, "/", len(train_data1))
-        model.train_on_batch(train_data1[i], train_labels1[i])
-        results = model.test_on_batch(test_data1[57], test_labels1[57])
-        print(results)
-    model.save('../models/lstm_batch1.h5')
+        model.fit(  train_data1[i],
+                    train_labels1[i],
+                    epochs = 1,
+                    batch_size = 1,
+                    validation_data = (test_data1[57], test_labels1[57]),
+                    verbose = 1)
+    model.save('../models/21-06-2xblstm_batch1_96.h5')
 
-model.save('../models/lstm_batch1.h5')
+model.save('../models/21-06-2xblstm_batch1_96.h5')
+
+all_accuracy = 0
+all_loss = 0
+for i in range(len(test_data1)):
+    results = model.test_on_batch(test_data1[i], test_labels1[i])
+    all_loss += results[0]
+    all_accuracy += results[1]
+
+print("Loss:", all_loss/len(train_data1))
+print("Accuracy:", all_accuracy/len(train_data1))
