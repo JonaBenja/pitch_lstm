@@ -29,7 +29,7 @@ train_labels = train_labels[84:-84]
 
 test_data = np.array(test_data).reshape(168, 447, 28)
 
-model = load_model('../models/lstm_padded.h5')
+model = load_model('../models/blstm_padded.h5')
 
 prediction = model.predict(test_data, batch_size = 168).tolist()
 
@@ -76,6 +76,8 @@ gross_errors_node = 0
 gross_errors_voicing = 0
 too_high = 0
 too_low = 0
+voiceless = 0
+voiced = 0
 
 # measure error percentage like YIN does
 for sound in prediction:
@@ -88,28 +90,38 @@ for sound in prediction:
             test_frames += 1
             node = frame.index(max(frame))
 
-            if (label[0] == 0 and node != 0) or (label[0] != 0 and node == 0):
-                gross_errors_voicing += 1
+            # voiced
+            if label[0]-1 != 0:
+                if node == 0:
+                    voiceless += 1
+                else:
+                    candidate = (test_data[num_sound-1][num_frame-1][node-COR]*100)
+                    if abs(candidate - label[1]) / label[1] > 0.2:
+                        if candidate > label[1]:
+                            too_high += 1
+                        else:
+                            too_low += 1
+            # voiceless
+            else:
+                if node != 0:
+                    voiced += 1
 
-            elif label[0] != 0 and node != 0:
-                candidate = (test_data[num_sound-1][num_frame-1][node-COR]*100)
-                if abs(candidate - label[1]) / label[1] > 0.2:
-                    gross_errors_freq += 1
-                    if candidate > label[1]:
-                        too_high += 1
-                    elif candidate < label[1]:
-                        too_low += 1
-
+gross_errors_freq = too_high + too_low
+gross_errors_voicing = voiceless + voiced
 gross_errors = gross_errors_freq + gross_errors_voicing
 
 print("The number of test frames is: ", test_frames)
 print("The number of gross errors is: ", gross_errors)
+print("The number of gross errors freq is: ", gross_errors_freq)
 print("The number of too high gross errors is: ", too_high)
 print("The number of too low gross errors is: ", too_low)
-print("The number of gross errors freq is: ", gross_errors_freq)
 print("The number of gross errors voicing is: ", gross_errors_voicing)
-print("The percentage of gross errors freq is: ", round(gross_errors_freq/test_frames*100, 2), "%")
+print("The number of wrong voiced errors is: ", voiced)
+print("The number of wrong voiceless errors is: ", voiceless)
 print("The percentage of gross errors voicing is: ", round(gross_errors_voicing/test_frames*100, 2), "%")
+print("The percentage of wrong voiced gross errors is: ", round(voiced/gross_errors_voicing*100, 2), "%")
+print("The percentage of wrong voiceless gross errors is: ", round(voiceless/gross_errors_voicing*100, 2), "%")
+print("The percentage of gross errors freq is: ", round(gross_errors_freq/test_frames*100, 2), "%")
 print("The percentage of too high gross errors is: ", round(too_high/gross_errors_freq*100, 2), "%")
 print("The percentage of too low gross errors is: ", round(too_low/gross_errors_freq*100, 2), "%")
 print("The percentage of (all) gross errors is: ", round(gross_errors/test_frames*100, 2), "%")
