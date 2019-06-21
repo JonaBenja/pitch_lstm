@@ -35,7 +35,11 @@ with open('../train_labels_all') as csvfile:
                 frame_acc = [0, 0]
                 place = int(row[0]) -1
                 frame[place] = 1
-                frame_acc[0] = place
+
+                # place + 1, otherwise the voiceless labels cannot be
+                # seperated from the pads. In the measuring of accuracy,
+                # 1 is subtracted from the place.
+                frame_acc[0] = place + 1
                 frame_acc[1] = float(row[1])
                 sound.append(frame)
                 sound_acc.append(frame_acc)
