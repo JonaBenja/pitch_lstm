@@ -90,22 +90,10 @@ for sound in prediction:
         if label[0] != 0:
             if node == 0:
                 voiceless += 1
-                """
-                print("************************")
-                print("Prediction:", frame)
-                print("Node:", node)
-                print("Label:", label)
-                """
 
             else:
                 candidate = test_data[num_sound-1][num_frame-1][node-COR]*100
                 if abs(candidate - label[1]) / label[1] > 0.2:
-                    print("************************")
-                    print("Prediction:", frame)
-                    print("Node:", node)
-                    print("Candidate:", candidate)
-                    print("Frame:", test_data[num_sound-1][num_frame-1])
-                    print("Label:", label)
 
                     if candidate > label[1]:
                         too_high += 1
@@ -115,12 +103,6 @@ for sound in prediction:
         else:
             if node != 0:
                 voiced += 1
-                """
-                print("************************")
-                print("Prediction:", frame)
-                print("Node:", node)
-                print("Label:", label)
-                """
 
 
 gross_errors_freq = too_high + too_low
