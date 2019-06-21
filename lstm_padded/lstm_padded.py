@@ -64,11 +64,14 @@ mask1 = [   0., 0., 0., 0., 0., 0.,
             0., 0., 0., 0., 0., 0.,
             0., 0., 0., 0.]
 
-mask2 = 0.
-
 model = Sequential([
 
     Masking(mask_value = mask1, input_shape = (447, 28)),
+
+    Bidirectional(LSTM(96,
+        return_sequences = True,
+        recurrent_activation = 'sigmoid',
+        input_shape = (447, 28))),
 
     Bidirectional(LSTM(96,
         return_sequences = True,
@@ -91,74 +94,7 @@ model.fit(  train_data,
             batch_size = 256,
             validation_data = (test_data, test_labels),
             verbose = 1)
-results_96 = model.evaluate(test_data, test_labels)
-print(results_96)
+results1 = model.evaluate(test_data, test_labels)
+print(results1)
 
-model.save('models/TEST_blstm_96_padded.h5')
-
-model = Sequential([
-
-    Masking(mask_value = mask1, input_shape = (447, 28)),
-
-    Bidirectional(LSTM(64,
-        return_sequences = True,
-        recurrent_activation = 'sigmoid',
-        input_shape = (447, 28))),
-
-    Dense(15, activation = tf.keras.activations.softmax),
-
-    ])
-
-model.compile(  loss = 'categorical_crossentropy',
-                optimizer = 'Adam',
-                metrics = ['accuracy'])
-
-model.summary()
-
-model.fit(  train_data,
-            train_labels,
-            epochs = 115,
-            batch_size = 256,
-            validation_data = (test_data, test_labels),
-            verbose = 1)
-
-results_64 = model.evaluate(test_data, test_labels)
-print(results_64)
-
-model.save('models/TEST_blstm_64_padded.h5')
-
-model = Sequential([
-
-    Masking(mask_value = mask1, input_shape = (447, 28)),
-
-    Bidirectional(LSTM(32,
-        return_sequences = True,
-        recurrent_activation = 'sigmoid',
-        input_shape = (447, 28))),
-
-    Dense(15, activation = tf.keras.activations.softmax),
-
-    ])
-
-model.compile(  loss = 'categorical_crossentropy',
-                optimizer = 'Adam',
-                metrics = ['accuracy'])
-
-model.summary()
-
-model.fit(  train_data,
-            train_labels,
-            epochs = 115,
-            batch_size = 256,
-            validation_data = (test_data, test_labels),
-            verbose = 1)
-
-
-results_32 = model.evaluate(test_data, test_labels)
-print(results_32)
-model.save('models/TEST_blstm_32_padded.h5')
-
-print("Results:")
-print("96 cells:", results_96)
-print("64 cells:", results_64)
-print("32 cells:", results_32)
+model.save('../models/blstm_padded.h5')
