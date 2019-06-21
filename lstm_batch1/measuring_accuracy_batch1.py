@@ -30,7 +30,7 @@ for sound in test_data:
 
 print(len(test_data1))
 
-model = load_model('../models/17-06lstm_batch1.h5')
+model = load_model('../models/blstm_batch1.h5')
 prediction = []
 for i in range(len(test_data1)):
     [test] = model.predict(test_data1[i], batch_size = 1)
