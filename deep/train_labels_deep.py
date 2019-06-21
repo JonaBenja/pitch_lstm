@@ -21,3 +21,13 @@ with open('../train_labels_all') as csvfile:
                 frame_acc[1] = float(row[1])
                 train_labels_deep.append(frame)
                 train_labels_deep_acc.append(frame_acc)
+
+values = 0
+voiced_values = 0
+for frame in train_labels_deep:
+    values += 1
+    if frame[0] == 1:
+        voiced_values += 1
+
+print("Values:", values)
+print("Voiced values:", voiced_values)
