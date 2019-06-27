@@ -58,7 +58,7 @@ test_data = test_data.reshape(168, 447, 28)
 test_labels = test_labels.reshape(168, 447, 15)
 
 
-mask1 = [   0., 0., 0., 0., 0., 0.,
+mask = [   0., 0., 0., 0., 0., 0.,
             0., 0., 0., 0., 0., 0.,
             0., 0., 0., 0., 0., 0.,
             0., 0., 0., 0., 0., 0.,
@@ -66,7 +66,7 @@ mask1 = [   0., 0., 0., 0., 0., 0.,
 
 model = Sequential([
 
-    Masking(mask_value = mask1, input_shape = (447, 28)),
+    Masking(mask_value = mask, input_shape = (447, 28)),
 
     Bidirectional(LSTM(96,
         return_sequences = True,
