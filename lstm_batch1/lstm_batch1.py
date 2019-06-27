@@ -3,10 +3,7 @@ from __future__ import absolute_import, division, print_function
 import collections
 import os
 
-#-mpip install matplotlib
-
 import tensorflow as tf
-#K.set_image_data_format('channels_last')
 from tensorflow import keras
 from keras.models import Sequential, load_model
 from keras.layers import Dense, Activation, Embedding, Dropout, TimeDistributed
