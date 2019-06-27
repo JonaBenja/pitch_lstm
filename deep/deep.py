@@ -59,7 +59,7 @@ history = model.fit(
             train_data,
             train_labels,
             epochs = 115,
-            batch_size = 128,
+            batch_size = 256,
             validation_data = (test_data, test_labels),
             verbose = 1)
 
