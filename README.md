@@ -113,6 +113,10 @@ This directory contains all the code used for the lstm batch1 network.
  This file contains the code for converting the train_labels dataset to a form that can be fed to the lstm_batch1 network
  in Python.
      
+`README.md`
+
+This is the file you are reading now.
+     
 ### models
 
 This directory contains the three trained networks.
