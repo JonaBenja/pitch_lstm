@@ -1,5 +1,6 @@
 # PITCH LSTM
-This repository contains the code for my bachelor thesis about pitch tracking with an LSTM neural network.
+This repository contains the code for my bachelor thesis about pitch tracking with an LSTM neural network: "A bidirectional LSTM network for pitch estimation of speech sounds".
+
 
 ## STRUCTURE
 
@@ -8,7 +9,6 @@ pitch_lstm
 │
 ├── deep
 │   ├── deep.py
-│   ├── discussion_strength.py
 │   ├── measuring_accuracy_deep.py
 │   ├── train_data_deep.py
 │   └── train_labels_deep.py
@@ -50,10 +50,6 @@ pitch_lstm
 `deep.py`
 
 This file contains the code for the construction of the deep network.
-
-`discussion_strength.py`
-
-This file contains the code used for measuring how many ground truth frames were not the candidate with the highest            strength. This number is treated in the discussion section of the paper.
 
 `measuring_accuracy_deep.py`
 
