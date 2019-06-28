@@ -3,7 +3,7 @@ This repository contains code for my bachelor thesis about pitch tracking with a
 
 ## CONTENTS
 
-* **deep**
+##### **deep**
 
 This directory contains all the code used for the deep network. 
 
@@ -29,7 +29,7 @@ Python.
 This file contains the code for converting the train_labels dataset to a form that can be fed to the deep network in
 Python.   
      
-* **lstm_padded**
+##### **lstm_padded**
 
 This directory contains all the code used for the lstm padded network. 
 
@@ -51,7 +51,7 @@ This directory contains all the code used for the lstm padded network.
  This file contains the code for converting the train_labels dataset to a form that can be fed to the lstm_padded network
  in Python.
      
-* **lstm_batch1**
+##### **lstm_batch1**
 
 This directory contains all the code used for the lstm batch1 network. 
  * `lstm_batch1.py`
@@ -71,7 +71,7 @@ This directory contains all the code used for the lstm batch1 network.
  This file contains the code for converting the train_labels dataset to a form that can be fed to the lstm_batch1 network
  in Python.
      
-* **models**
+##### **models**
 
 This directory contains the three trained networks.
 
@@ -87,7 +87,7 @@ This file contains the code for the imitation of the evaluation of the debiased 
 
 This file contains the code for the evaluation of the debiased autocorrelation in Praat on the test set of the database created by Atake et al (2000). Code to be run in Praat.
 
-* `train_data+train_labels.zip`
+##### `train_data+train_labels.zip`
 
 This zip-file contains the two datasets used to train the networks that were constructed in my thesis. 
 
