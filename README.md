@@ -10,15 +10,33 @@ This repository contains code for my bachelor thesis about pitch tracking with a
 │   ├── measuring_accuracy_deep.py
 │   ├── train_data_deep.py
 │   └── train_labels_deep.py
-├── dist (or build)
-├── node_modules
-├── bower_components (if using bower)
-├── test
-├── Gruntfile.js/gulpfile.js
-├── README.md
-├── package.json
-├── bower.json (if using bower)
-└── .gitignore
+|
+├── lstm_padded
+│   ├── lstm_padded.py
+│   ├── measuring_accuracy_padded.py
+│   ├── train_data_padded.py
+│   └── train_labels_padded.py
+|
+├── lstm_batch1
+│   ├── lstm_batch1.py
+│   ├── measuring_accuracy_batch1.py
+│   ├── train_data_batch1.py
+│   └── train_labels_batch1.py
+|
+├── models
+│   ├── blstm_batch1.h5
+│   ├── blstm_padded.h5
+│   └── deep.h5
+|
+├── YIN settings_acf.praat
+|
+├── measuring_accuracy.praat
+|
+├── train_data+train_labels.zip
+│   ├── train_data
+│   └── train_labels
+|
+└── train_data.praat
 ```
 
 ### **deep**
