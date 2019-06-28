@@ -1,5 +1,5 @@
 # PITCH LSTM
-This repository contains code for my bachelor thesis about pitch tracking with a LSTM neural network.
+This repository contains code for my bachelor thesis about pitch tracking with an LSTM neural network.
 
 ## CONTENTS
 
