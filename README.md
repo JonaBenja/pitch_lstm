@@ -4,15 +4,12 @@ This repository contains code for my bachelor thesis about pitch tracking with a
 ## CONTENTS
 
 ```bash
-├── app
-│   ├── css
-│   │   ├── **/*.css
-│   ├── favicon.ico
-│   ├── images
-│   ├── index.html
-│   ├── js
-│   │   ├── **/*.js
-│   └── partials/template
+├── deep
+│   ├── deep.py
+│   ├── discussion_strength.py
+│   ├── measuring_accuracy_deep.py
+│   ├── train_data_deep.py
+│   └── train_labels_deep.py
 ├── dist (or build)
 ├── node_modules
 ├── bower_components (if using bower)
@@ -24,7 +21,6 @@ This repository contains code for my bachelor thesis about pitch tracking with a
 └── .gitignore
 ```
 
-```
 ### **deep**
 
 This directory contains all the code used for the deep network. 
