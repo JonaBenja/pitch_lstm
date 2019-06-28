@@ -1,5 +1,5 @@
 # PITCH LSTM
-This repository contains the code for my bachelor thesis about pitch tracking with an LSTM neural network: "*A bidirectional LSTM network for pitch estimation of speech sounds*".
+This repository contains the code for my bachelor thesis about pitch tracking with an LSTM neural network: "*A bidirectional LSTM network for pitch estimation of speech sounds (2019)*".
 
 
 ## STRUCTURE
