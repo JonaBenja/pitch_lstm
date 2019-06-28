@@ -25,6 +25,8 @@ pitch_lstm
 │   ├── train_data_batch1.py
 │   └── train_labels_batch1.py
 │
+├── README.md
+│
 ├── models
 │   ├── blstm_batch1.h5
 │   ├── blstm_padded.h5
@@ -115,13 +117,11 @@ This directory contains all the code used for the lstm batch1 network.
 
 This directory contains the three trained networks.
 
-`blstm_batch1.h5`
-`blstm_padded.h5`
-`deep.h5`
+`blstm_batch1.h5`, `blstm_padded.h5`, `deep.h5`
 
 `YIN settings_acf.praat`
 
-This file contains the code for the imitation of the evaluation of the debiased autocorrelation in Praat de Cheveinge et al (2000). Code to be run in Praat.
+This file contains the code for the imitation of the evaluation of the debiased autocorrelation in Praat de Cheveinge and Kawahara (2000). Code to be run in Praat.
 
 `measuring_accuracy_praat.praat`
 
@@ -136,7 +136,8 @@ This zip-file contains the two datasets used to train the networks that were con
  This file contains the data the networks were trained on, including the test data. 
 
 `train_labels_all`
-This file contains the labels that were used to fine tune the networks and the measure the accuracy of the networks and the debiased autocorrelation in Praat.
+
+This file contains the labels that were used to fine tune the networks and the measure the accuracy of the networks and the debiased autocorrelation in Praat, for the train data and the test data.
     
 `train_data.praat`
 
