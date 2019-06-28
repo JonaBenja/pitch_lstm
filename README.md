@@ -54,7 +54,9 @@ This directory contains all the code used for the lstm padded network.
 ### **lstm_batch1**
 
 This directory contains all the code used for the lstm batch1 network. 
+
  * `lstm_batch1.py`
+ 
  This file contains the code for the construction of the lstm batch1 network.
  
  * `measuring_accuracy_batch1.py`
@@ -78,7 +80,6 @@ This directory contains the three trained networks.
  * `blstm_batch1.h5`
  * `blstm_padded.h5`
  * `deep.h5`
- 
 
 `YIN settings_acf.praat`
 
@@ -88,7 +89,7 @@ This file contains the code for the imitation of the evaluation of the debiased 
 
 This file contains the code for the evaluation of the debiased autocorrelation in Praat on the test set of the database created by Atake et al (2000). Code to be run in Praat.
 
-### `train_data+train_labels.zip`
+### train_data+train_labels.zip
 
 This zip-file contains the two datasets used to train the networks that were constructed in my thesis. 
 
