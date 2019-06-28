@@ -93,13 +93,13 @@ This file contains the code for the evaluation of the debiased autocorrelation i
 
 This zip-file contains the two datasets used to train the networks that were constructed in my thesis. 
 
-    * `train_data_all`
-    
-    This contains the data the networks were trained on, including the test data. 
-    
-    * `train_labels_all`
-    
-    This contains the labels that were used to fine tune the networks and the measure the accuracy of the networks and the         debiased autocorrelation in Praat.
+ * `train_data_all`
+
+ This contains the data the networks were trained on, including the test data. 
+
+ * `train_labels_all`
+
+ This contains the labels that were used to fine tune the networks and the measure the accuracy of the networks and the         debiased autocorrelation in Praat.
     
 * `train_data.praat`
 
