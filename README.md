@@ -5,6 +5,7 @@ This repository contains code for my bachelor thesis about pitch tracking with a
 
 ```bash
 ├── deep
+│   **This directory contains all the code used for the deep network.** 
 │   ├── deep.py
 │   ├── discussion_strength.py
 │   ├── measuring_accuracy_deep.py
