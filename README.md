@@ -67,15 +67,15 @@ Python.
      
 ### lstm_padded
 
-This directory contains all the code used for the lstm padded network. 
+This directory contains all the code used for the lstm_padded network. 
 
 `lstm_padded.py`
 
- This file contains the code for the construction of the lstm padded network.
+ This file contains the code for the construction of the lstm_padded network.
 
 `measuring_accuracy_padded.py`
 
- This file contains the code of measuring the accuracy of the deep network on the test set.
+ This file contains the code of measuring the accuracy of the lstm_padded network on the test set.
 
 `train_data_padded.py`
 
@@ -89,15 +89,15 @@ This directory contains all the code used for the lstm padded network.
      
 ### lstm_batch1
 
-This directory contains all the code used for the lstm batch1 network. 
+This directory contains all the code used for the lstm_batch1 network. 
 
 `lstm_batch1.py`
  
- This file contains the code for the construction of the lstm batch1 network.
+ This file contains the code for the construction of the lstm_batch1 network.
  
 `measuring_accuracy_batch1.py`
 
- This file contains the code of measuring the accuracy of the batch1 network on the test set.
+ This file contains the code of measuring the accuracy of the lstm_batch1 network on the test set.
 
 `train_data_batch1.py`
 
@@ -108,6 +108,8 @@ This directory contains all the code used for the lstm batch1 network.
 
  This file contains the code for converting the train_labels dataset to a form that can be fed to the lstm_batch1 network
  in Python.
+ 
+### README 
      
 `README.md`
 
@@ -119,9 +121,11 @@ This directory contains the three trained networks.
 
 `blstm_batch1.h5`, `blstm_padded.h5`, `deep.h5`
 
+### Praat scripts and data
+
 `YIN settings_acf.praat`
 
-This file contains the code for the imitation of the evaluation of the debiased autocorrelation in Praat de Cheveinge and Kawahara (2000). Code to be run in Praat.
+This file contains the code for the imitation of the evaluation of the debiased autocorrelation in Praat by de Cheveinge and Kawahara (2000). Code to be run in Praat.
 
 `measuring_accuracy_praat.praat`
 
@@ -141,4 +145,4 @@ This file contains the labels that were used to fine tune the networks and the m
     
 `train_data.praat`
 
-This file contains the code that generated the data for the train_data_all and train_labels_all files. These files were created from the database of Atake et al (2000).
+This file contains the code that generated the data for the train_data_all and train_labels_all files. These files were created from the database of Atake et al (2000). Code to be run in Praat.
