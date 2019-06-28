@@ -1,11 +1,12 @@
 # PITCH LSTM
-This repository contains code for my bachelor thesis about pitch tracking with an LSTM neural network.
+This repository contains the code for my bachelor thesis about pitch tracking with an LSTM neural network.
 
-## CONTENTS
+## STRUCTURE
 
 ```bash
+pitch_lstm
+│
 ├── deep
-│   **This directory contains all the code used for the deep network.** 
 │   ├── deep.py
 │   ├── discussion_strength.py
 │   ├── measuring_accuracy_deep.py
@@ -39,29 +40,26 @@ This repository contains code for my bachelor thesis about pitch tracking with a
 │
 └── train_data.praat
 ```
+### deep
 
-### **deep**
-
-This directory contains all the code used for the deep network. 
-
-* `deep.py`
+`deep.py`
 
 This file contains the code for the construction of the deep network.
 
-* `discussion_strength.py`
+`discussion_strength.py`
 
 This file contains the code used for measuring how many ground truth frames were not the candidate with the highest            strength. This number is treated in the discussion section of the paper.
 
-* `measuring_accuracy_deep.py`
+`measuring_accuracy_deep.py`
 
 This file contains the code of measuring the accuracy of the deep network on the test set.
 
-* `train_data_deep.py`
+`train_data_deep.py`
 
 This file contains the code for converting the train_data dataset to a form that can be fed to the deep network in  
 Python.
 
-* `train_labels_deep.py`
+`train_labels_deep.py`
 
 This file contains the code for converting the train_labels dataset to a form that can be fed to the deep network in
 Python.   
